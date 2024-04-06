@@ -7,6 +7,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Ubuntu',sans-serif;
+    color: #3A506B;
 }
 
 .container{
@@ -72,8 +74,21 @@ form input{
 }
 
 .msg{
+   
+    font-size: 3rem;
+}
+.toCurrCode{
+font-size: 1.5rem;
+padding-top: 1.4rem;
+padding-left: 0.5;
+}
+
+.msg_container{
     margin: 2rem 0 2rem 0;
     padding: 0 2rem 0 2rem;
+    color : #3A506B;
+    display: flex;
+
 }
 .amount{
     padding: 0 2.9rem 0 2rem;
@@ -92,4 +107,10 @@ h1{
     align-items: center;
     justify-content: center;
     display: flex;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:500 ;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
 }

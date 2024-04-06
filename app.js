@@ -1,11 +1,12 @@
 const BASE_URL =
   "https://v6.exchangerate-api.com/v6/0f6ced279b7f5b315898b44b/pair";
 
-const toCurr = document.querySelector(".from select");
-const fromCurr = document.querySelector(".to select");
+const fromCurr = document.querySelector(".from select");
+const toCurr = document.querySelector(".to select");
 
 const dropdown = document.querySelectorAll('.dropdown select');  
 const msg = document.querySelector('.msg');
+const currResult = document.querySelector('.toCurrCode');
 
 
 for(let select of dropdown ){
@@ -27,8 +28,38 @@ select.append(newOption);
         updateFlag(evt.target);
 
     });
+
 }
 
+
+// // Check if msg and curResult are empty before fetching data
+// if (msg.innerHTML === defaultMsg && curResult.innerHTML === defaultCurResult) {
+//     const URL = `https://v6.exchangerate-api.com/v6/0f6ced279b7f5b315898b44b/pair/USD/INR`;
+    
+//     let response = await fetch(URL);
+//     let data = await response.json();
+//     let rate = data.conversion_rate;
+    
+//     // Update msg and curResult with the values from the API
+//     msg.innerHTML = rate;
+//     curResult.innerHTML = 'INR'; // Use quotes around 'INR'
+// }
+
+
+async function apiUse(amtVal){
+    const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
+    
+    let response = await fetch(URL);
+    let data = await response.json();
+    let rate  = data.conversion_rate;
+
+    
+    let final_conversion = amtVal*rate ; 
+    
+    
+    msg.innerHTML = final_conversion.toFixed(4) +" " ;
+    currResult.innerHTML = toCurr.value ;
+}
 
 const updateFlag = (element) =>       {
     let currCode = element.value;
@@ -44,27 +75,21 @@ btn.addEventListener("click" , async (evt) => {
     evt.preventDefault();
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
-    console.log(amtVal);
+    
     if(amtVal < 1 || amtVal ==="" ){
         amtVal = 1;
         amount.value = "1";
     }
-    const URL = `${BASE_URL}/${toCurr.value}/${fromCurr.value}`;
-    console.log(URL);
-    let response = await fetch(URL);
-    let data = await response.json();
-    let rate  = data.conversion_rate;
+   apiUse(amtVal);
+ 
 
-    console.log(rate);
-    let final_conversion = amtVal*rate ; 
-    console.log(final_conversion)
-    
-    msg.innerHTML = final_conversion;
 
 
 
 
 })
+
+
 
 
 
