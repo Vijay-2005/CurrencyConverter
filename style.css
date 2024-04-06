@@ -7,13 +7,13 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Ubuntu',sans-serif;
-    color: #3A506B;
-    background-color: #DDFDF2;
+    font-family: "Inter", sans-serif;
+    color: #2A2A2A;
+    background-color: #3D3D3D;
 }
 
 .container{
-    box-shadow: 0 10px 20px 0 #b3bbc673;
+    /* box-shadow: 0 10px 20px 0 #b3bbc673; */
     /* border-color: aqua; */
     border-width: 10px;
     border-radius: 15px;
@@ -89,7 +89,7 @@ padding-left: 0.5;
 .msg_container{
     margin: 2rem 0 2rem 0;
     padding: 0 2rem 0 2rem;
-    color : #3A506B;
+    color : #3D3D3D;
     display: flex;
 
 }
@@ -105,10 +105,11 @@ padding-left: 0.5;
     margin-left: 2rem;
     margin-right: 0.5rem;
     width: 83%;
+    font-family: "Inter", sans-serif;
    
 }
 #exchange:hover {
-    background-color:#BFFFCA;
+    background-color:#575757;
 }
 h1{
     align-items: center;
@@ -132,6 +133,7 @@ h1{
 .container2{
 margin-right: 5rem;
 font-size: 2.5rem;
+color: white;
 }
 
 @media screen and ( max-width : 998px){
