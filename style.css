@@ -3,15 +3,30 @@
     padding: 0;
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     min-height: 100vh;
     font-family: "Inter", sans-serif;
     color: #2A2A2A;
     background-color: #3D3D3D;
 }
 
+/* this is big container where two partition are there  */
+.bigContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+/* first partition  */
+.container2{
+margin-right: 5rem;
+font-size: 2.5rem;
+color: white;
+}
+
+/* main box of currency converter  */
 .container{
     
     border-width: 10px;
@@ -19,7 +34,7 @@ body{
     overflow: hidden;
     height: 100%;
     padding: 30px;
-    margin-top: 50px;
+    margin-top: 7rem;
     background-color: white;
    
 }
@@ -43,6 +58,8 @@ form input{
 
 }
 
+
+/* dropdown properties */
 .dropdown{
     display: flex;
     align-items: center;
@@ -75,6 +92,8 @@ form input{
     padding-left: 2.2rem;
 }
 
+/* the currency change value which will appear */
+
 .msg{
    
     font-size: 3rem;
@@ -95,6 +114,8 @@ padding-left: 0.5;
 .amount{
     padding: 0 2.9rem 0 2rem;
 }
+
+/* exchange button  */
 #exchange{
     
     font-size: 1rem;
@@ -112,18 +133,28 @@ padding-left: 0.5;
 }
 
 
-.bigContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    
+
+
+/* footer css  */
+.footer{
+    color: white;
+    text-align: center;
+   
+    font-family: "Inter", sans-serif;
+    margin-top: 5rem;
+
+            
 }
-.container2{
-margin-right: 5rem;
-font-size: 2.5rem;
-color: white;
+.footer a{
+    color: white;
 }
+
+.social{
+    padding: 10px 10px 10px 10px;
+  
+}
+
+
 
 @media screen and ( max-width : 998px){
     .container2{
