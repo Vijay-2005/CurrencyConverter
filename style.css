@@ -22,6 +22,7 @@ body{
     padding: 30px;
     margin-top: 50px;
     background-color: white;
+    /* width: 60%; */
 }
 
 form{
@@ -104,6 +105,10 @@ padding-left: 0.5;
     margin-left: 2rem;
     margin-right: 0.5rem;
     width: 83%;
+   
+}
+#exchange:hover {
+    background-color:#BFFFCA;
 }
 h1{
     align-items: center;
@@ -115,4 +120,38 @@ h1{
     font-style: normal;
     font-variation-settings:
       "slnt" 0;
+}
+
+.bigContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.container2{
+margin-right: 5rem;
+font-size: 2.5rem;
+}
+
+@media screen and ( max-width : 998px){
+    .container2{
+        font-size: 2rem;
+        padding-left: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0;
+        width: 80%;
+    }
+    .container{
+        width: 60%;
+    }
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        padding-left: 3rem; 
+    }
 }
