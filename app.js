@@ -1,10 +1,11 @@
 const BASE_URL =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+  "https://v6.exchangerate-api.com/v6/0f6ced279b7f5b315898b44b/pair";
 
 const toCurr = document.querySelector(".from select");
 const fromCurr = document.querySelector(".to select");
 
 const dropdown = document.querySelectorAll('.dropdown select');  
+const msg = document.querySelector('.msg');
 
 
 for(let select of dropdown ){
@@ -48,11 +49,17 @@ btn.addEventListener("click" , async (evt) => {
         amtVal = 1;
         amount.value = "1";
     }
-    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    const URL = `${BASE_URL}/${toCurr.value}/${fromCurr.value}`;
     console.log(URL);
     let response = await fetch(URL);
     let data = await response.json();
-    console.log(data);
+    let rate  = data.conversion_rate;
+
+    console.log(rate);
+    let final_conversion = amtVal*rate ; 
+    console.log(final_conversion)
+    
+    msg.innerHTML = final_conversion;
 
 
 
