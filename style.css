@@ -9,6 +9,7 @@ body{
     min-height: 100vh;
     font-family: 'Ubuntu',sans-serif;
     color: #3A506B;
+    background-color: #DDFDF2;
 }
 
 .container{
@@ -20,6 +21,7 @@ body{
     height: 100%;
     padding: 30px;
     margin-top: 50px;
+    background-color: white;
 }
 
 form{
