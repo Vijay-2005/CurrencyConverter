@@ -3,6 +3,9 @@
 
 This is a simple currency converter application that allows you to convert between different currencies.
 
+![Image Description](/images/Screenshot%202024-04-07%20185031.png)
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7a8bb9c6-8569-4614-a4b9-35dfdba7c822/deploy-status)](https://app.netlify.com/sites/currencii/deploys)
 
 ## How to Use
