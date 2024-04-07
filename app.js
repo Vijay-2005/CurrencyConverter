@@ -7,8 +7,11 @@ const toCurr = document.querySelector(".to select");
 const dropdown = document.querySelectorAll('.dropdown select');  
 const msg = document.querySelector('.msg');
 const currResult = document.querySelector('.toCurrCode');
+const btn = document.querySelector("form button");
 
 
+
+//  to make flags at default 
 for(let select of dropdown ){
     for(currCode  in countryList){
        let newOption  = document.createElement("option");
@@ -33,7 +36,7 @@ select.append(newOption);
 
 
 // // Check if msg and curResult are empty before fetching data
-// if (msg.innerHTML === defaultMsg && curResult.innerHTML === defaultCurResult) {
+// if (msg.innerHTML === "" && curResult.innerHTML === "") {
 //     const URL = `https://v6.exchangerate-api.com/v6/0f6ced279b7f5b315898b44b/pair/USD/INR`;
     
 //     let response = await fetch(URL);
@@ -45,7 +48,7 @@ select.append(newOption);
 //     curResult.innerHTML = 'INR'; // Use quotes around 'INR'
 // }
 
-
+//  ApI code 
 async function apiUse(amtVal){
     const URL = `${BASE_URL}/${fromCurr.value}/${toCurr.value}`;
     
@@ -60,7 +63,7 @@ async function apiUse(amtVal){
     msg.innerHTML = final_conversion.toFixed(4) +" " ;
     currResult.innerHTML = toCurr.value ;
 }
-
+// it will change the flag on the basis of currency code 
 const updateFlag = (element) =>       {
     let currCode = element.value;
     let countryCode = countryList[currCode];
@@ -69,8 +72,8 @@ const updateFlag = (element) =>       {
     img.src = newSrc;
 
 };
- const btn = document.querySelector("form button");
-
+ 
+//when we press button of exchange rate 
 btn.addEventListener("click" , async (evt) => {
     evt.preventDefault();
     let amount = document.querySelector(".amount input");
@@ -81,12 +84,6 @@ btn.addEventListener("click" , async (evt) => {
         amount.value = "1";
     }
    apiUse(amtVal);
- 
-
-
-
-
-
 })
 
 
